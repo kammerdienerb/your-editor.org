@@ -1,5 +1,6 @@
 pre.numbered {
     counter-reset: linecounter;
+    width: 90%;
 }
 pre.numbered span.sl {
     counter-increment: linecounter;
@@ -11,7 +12,7 @@ pre.numbered span.sl:before {
     -webkit-user-select: none;
 }
 .inline_code {
-    display:block;
+    display:inline-grid;
     overflow: auto;
     padding: 1em 1.5em;
     margin-bottom: 1.6em;
@@ -19,21 +20,24 @@ pre.numbered span.sl:before {
     font-family: monospace;
     line-height: 1.2;
     border: 1px solid #000000;
-    border-left: 3px solid #BF6069;
-    background-color: #2E3340;
-    color: #D8DEE8;
+    border-left: 3px solid #d81e5b;
+    background-color: #000a14;
+    color: #f6f1d1;
+    width: 100%;
 }
 span.kw {
-    color: #81A1C1;
+    color: #d81e5b;
     font-weight: bold;
 }
 span.cmt {
-    color: #4C556A;
+    color: #48b4eb;
     font-style: italic;
 }
 span.str {
-    color: #A3BE8B;
+    color: #53aa6f;
 }
 span.prompt {
     -webkit-user-select: none;
+}
+code {
 }

@@ -3,59 +3,53 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>bJou</title>
+        <title>yed</title>
         <link rel="stylesheet" href="styles/basic.css">
         <link rel="stylesheet" href="styles/source_code.css">
-        <script src="scripts/toggle_mobile_menu.js"></script> 
     </head>
 
-<div class="topnav">
-    <a href="index.html" class="active logo_a" id="logo_link"><img class="logo" src="images/logo_blue.png"/><span class="logo_text active">bJou</span></a>
-    <span id="navlinks">
-    <a href="install.html" class="nav_a">Install</a>
-    <a href="features.html" class="nav_a">Features</a>
-    <a href="learn.html" class="nav_a">Learn</a>
-    <a href="blog.html" class="nav_a">Blog</a>
-    </span>
-</div>
+    <div class="wrapper">
+        <div class="header">
+            <a href="index.html" class="active logo_a" id="logo_link"><span class="logo_text active">yed</span></a>
+            <span id="navlinks">
+            <a href="install.html" class="nav_a">Install</a>
+            <a href="user_guide.html" class="nav_a">User Guide</a>
+            <a href="dev_man.html" class="nav_a">Developer Manual</a>
+            </span>
+        </div>
 
-<body>
-<header>
-    <h1>Program effectively. Compile quickly. Create fast code.</h1>
-</header>
-<p>
-bJou is a simple systems programming language that focuses on speed and effectiveness in both the process of programming and the generated programs.
-While the core of the language is relatively simple, bJou allows for limitless power of expressiveness through compile-time metaprogramming.
-    <a href="install.html">Try it out</a> and <a href="learn.html">learn more</a>.
-</p>
+        <div class="content"><div class="inner"><div class="scrollable"><div class="main">
+            <h1>yed: <i>your</i> editor</h1>
+            <p>
+            yed is a small and simple terminal editor core that is meant to be extended through a powerful plugin architecture.
+            The editor base is command driven, lightweight, and fast.
+            It makes no assumptions about a user's desired editing style and leaves most functionality up to implementation and configuration plugins.
+            <br/>
+            <a href="install.html">Try it out</a> and <a href="user_guide.html">learn more</a>.
+            </p>
 
-<figure>
-<pre class="inline_code numbered">
-<span class="sl"><span class="kw">using</span> <span class="kw">import</span> <span class="str">"compiler.bjou"</span></span>
-<span class="sl"></span>
-<span class="sl"><span class="cmt"># run this at compile time</span></span>
-<span class="sl"><span class="kw">\static_do</span> {</span>
-<span class="sl">    <span class="cmt"># create the AST</span></span>
-<span class="sl">    message := bjou_createStringLiteral(<span class="str">"Hello, world!\n"</span>)</span>
-<span class="sl">    args    := bjou_createArgList(&amp;message, 1)</span>
-<span class="sl">    ident   := bjou_createIdentifier("printf")</span>
-<span class="sl">    call    := bjou_createCallExpression(ident, args)</span>
-<span class="sl"></span>
-<span class="sl">    <span class="cmt"># register symbols</span></span>
-<span class="sl">    bjou_addSymbols(call, bjou_getGlobalScope())</span>
-<span class="sl"></span>
-<span class="sl">    <span class="cmt"># add to our program</span></span>
-<span class="sl">    bjou_appendNode(call)</span>
-<span class="sl">}</span></pre>
-<figcaption> Building "Hello, world!" at compile time</figcaption>
-</figure>
+            <center><img src="images/screenshot.png" width=90% /></center>
 
-</body>
-<footer>
-    <ul>
-        <li><a href="https://www.github.com/kammerdienerb/bJou" target="_blank"><img src="images/GitHub-Mark-120px-plus.png"/></a></li>
-        <li><a href="https://discord.gg/ZuDqxb8" target="_blank"><img src="images/Discord-Logo-Color.png"/></a></li>
-    </ul>
-    <span class="foot_txt">This website is open source and available on <a href="https://www.github.com/kammerdienerb/kammerdienerb.github.io" target="_blank">GitHub</a>.</span>
-</footer>
+            <h2>Core Editor Features</h2>
+            <div style="float: left; width: 50%"><ul>
+                <li>FAST</li>
+                <li>Dependency free</li>
+                <li>Layered frame management</li>
+                <li>24-bit truecolor support</li>
+            </ul></div>
+            <div style="float: right; width: 50%"><ul>
+                <li>Dynamic key bindings and key sequences</li>
+                <li>Undo/redo</li>
+                <li>Live find and replace</li>
+                <li>Customization/extension via plugins</li>
+            </ul></div>
+        </div></div></div></div>
+
+        <footer>
+            <ul>
+                <li><a href="https://www.github.com/kammerdienerb/yed" target="_blank"><img src="images/GitHub-Mark-120px-plus.png"/></a></li>
+                <li><a href="https://discord.gg/4BmBVtcwe8" target="_blank"><img src="images/Discord-Logo-Color.png"/></a></li>
+            </ul>
+        </footer>
+    </div>
 </html>
