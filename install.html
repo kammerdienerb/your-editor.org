@@ -26,17 +26,22 @@
             <div class="code"><pre class="inline_code">
                 <span class="sl"><span class="prompt">$ </span>git clone git@github.com:kammerdienerb/yed.git</span>
             </pre></div>
-            Compile <tt>yed</tt> using the provided build script.
+            Use the provided <tt>install.sh</tt> to build and install <tt>yed</tt>.
+            Build/install options can be changed in <tt>install.options</tt> or by passing the following flags to <tt>install.sh</tt>:
+            <ul style="list-style-type:none">
+                <li><tt>-c CONFIG</tt> -- specify the build configuration. (existing options are <tt>debug</tt> and <tt>release</tt>) <tt>release</tt> is the default.</li>
+                <li><tt>-p PREFIX</tt> -- the installation prefix path. By default, this is set to a reasonable system path like <tt>/usr</tt>.</li>
+            </ul>
+            Ex. Build and install a debug build to a test directory:
             <div class="code"><pre class="inline_code">
-                <span class="sl"><span class="prompt">$ </span>./build.sh</span>
+                <span class="sl"><span class="prompt">$ </span>./install.sh -c debug -p test</span>
             </pre></div>
-            To install <tt>yed</tt> to the default system install prefix (usually <tt>/usr</tt>), you can run the install script as-is (you will likely need root privileges).
-            If instead, you'd like to install <tt>yed</tt> somewhere else, edit <tt>install.options</tt> to include the desired installation path.
-            <br/>
+            Ex. Build and install a release build to your system:
             <div class="code"><pre class="inline_code">
                 <span class="sl"><span class="prompt">$ </span>sudo ./install.sh</span>
             </pre></div>
             NOTE: if you installed <tt>yed</tt> to a non-default path, ensure that the directory containing the <tt>yed</tt> executable is in your <tt>PATH</tt>.
+            <br/>
             <br/>
             You should now be able to run <tt>yed</tt>!
             <br/>
