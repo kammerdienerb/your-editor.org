@@ -118,10 +118,12 @@ footer .foot_txt {
     text-align: center;
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 1000px) {
     .header #logo_link {
         width: 100%;
         padding: 10px 0;
+        margin: 0 0 0 0;
+        overflow: hidden;
     }
     .logo {
         position:absolute;
