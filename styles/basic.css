@@ -118,7 +118,7 @@ footer .foot_txt {
     text-align: center;
 }
 
-@media only screen and (max-width : 1000px) {
+@media only screen and (max-width : 600px) {
     .header #logo_link {
         width: 100%;
         padding: 10px 0;
@@ -136,7 +136,10 @@ footer .foot_txt {
     .header .nav_a {
         display:inline-block;
         width: 33.33%;
-        margin: 0;
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
         padding: 10px 0;
     }
     #navlinks {
