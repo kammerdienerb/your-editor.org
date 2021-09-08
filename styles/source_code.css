@@ -23,21 +23,8 @@ pre.numbered span.sl:before {
     border-left: 3px solid #d81e5b;
     background-color: #000a14;
     color: #f6f1d1;
-    width: 100%;
-}
-.inline_code_small {
-    display:inline-grid;
-    overflow: auto;
-    padding: 1em 1.5em;
-    margin-bottom: 1.6em;
-    white-space:pre;
-    font-family: monospace;
-    line-height: 1.2;
-    border: 1px solid #000000;
-    border-left: 3px solid #d81e5b;
-    background-color: #000a14;
-    color: #f6f1d1;
-    width: 40%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
 }
 span.kw {
     color: #d81e5b;
@@ -52,6 +39,4 @@ span.str {
 }
 span.prompt {
     -webkit-user-select: none;
-}
-code {
 }

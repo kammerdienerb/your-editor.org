@@ -48,8 +48,8 @@ html, body {
     overflow: auto;
 }
 .main {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 h1,h2,h3{
@@ -121,6 +121,7 @@ footer .foot_txt {
 @media only screen and (max-width : 600px) {
     .header #logo_link {
         width: 100%;
+        padding: 10px 0;
     }
     .logo {
         position:absolute;
@@ -144,8 +145,8 @@ footer .foot_txt {
         text-align:center;
     }
     .main {
-        margin-left: 25px;
-        margin-right: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
