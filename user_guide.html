@@ -37,12 +37,13 @@
                         <li><a href="#S4">4 Buffers</a></li>
                         <li><a href="#S5">5 Frames</a></li>
                         <li><a href="#S6">6 Variables</a></li>
-                        <li><a href="#S7">7 Plugins</a>
+                        <li><a href="#S7">7 Styles</a></li>
+                        <li><a href="#S8">8 Plugins</a>
                             <ul>
-                                <li><a href="#S7_1">YPM</a></li>
+                                <li><a href="#S8_1">YPM</a></li>
                             </ul>
                         </li>
-                        <li><a href="#S8">8 F.A.Q.</a></li>
+                        <li><a href="#S9">9 F.A.Q.</a></li>
                     </ul>
                 </div></li>
                 <br/>
@@ -200,26 +201,50 @@
                 <br/>
                 <br/>
                 See the <a href="var_ref.html" target="_blank">Variable Reference</a>.
-            <h2 id="S7">Plugins</h2>
+            <h2 id="S7">Styles</h2>
+                To change <tt>yed</tt>'s colors and attributes, you can activate a style.
+                <br/>
+                Styles are generally created by plugins and activated by name using the <tt>style</tt> command.
+                <pre class="inline_code">
+                    <span class="sl"><span class="prompt">YED> </span>style monokai</span>
+                </pre>
+                <span style="color: #53aa6f">NOTE</span>: The only style available without plugins is called "default".
+                <br/>
+                <br/>
+                Most available styles are written to use the full 16 million colors available in "truecolor" terminals when the variable <tt>truecolor</tt> is true (false by default).
+                However, most of the styles will try to approximate their colors into the 256 color palette if <tt>truecolor</tt> is disabled (to varying degrees of success).
+                <br/>
+                Check this list to see if your terminal supports truecolor: <a href="https://gist.github.com/XVilka/8346728" target="_blank">https://gist.github.com/XVilka/8346728</a>.
+                <br/>
+                <br/>
+                To enable truecolor styles, set <tt>truecolor</tt> to a truthy value <i>before loading the style plugins</i>:
+                <pre class="inline_code">
+                    <span class="sl"><span class="kw">set</span> truecolor <span class="str">'yes'</span></span>
+                    <span class="sl"><span class="kw">plugin-load</span> <span class="str">'ypm'</span> <span class="cmt"># if style plugins loaded by YPM</span></span>
+                    <span class="sl"><span class="kw">plugin-load</span> <span class="str">'styles/gruvbox'</span> <span class="cmt"># or manually</span></span>
+                    <span class="sl"><span class="kw">style</span> <span class="str">'gruvbox'</span></span>
+                </pre>
+
+            <h2 id="S8">Plugins</h2>
                 Almost all advanced functionality is implemented by plugins.
                 Plugins can be loaded and unloaded with the commands <tt>plugin-load</tt> and <tt>plugin-unload</tt>.
                 When you try to load a plugin, <tt>yed</tt> will search the plugin in the paths listed by the command <tt>plugins-list-dirs</tt> (descending priority).
                 <br/>
                 <br/>
                 To find out where a plugin is being loaded from, use the command <tt>plugin-path</tt>.
-                <h3 id="S7_1">YPM</h3>
+                <h3 id="S8_1">YPM</h3>
                     <tt>yed</tt> ships with a plugin manager called <tt>YPM</tt> that can optionally be used to find, download, and use plugins from a large collection of user-written plugins.
                     If the <tt>ypm</tt> plugin has been loaded, you may use the command <tt>ypm-menu</tt> to see a list of all available.
                     From there you can discover the plugins that you'd like and install them.
                     Plugins installed with <tt>ypm</tt> will automatically be loaded the next time you run <tt>yed</tt>, so there is no need to add <tt>plugin-load</tt> commands to your configuration.
 
-            <h2 id="S8">F.A.Q.</h2>
+            <h2 id="S9">F.A.Q.</h2>
                 <h3>How do I quit <tt>yed</tt>?</h3>
                 <p style="margin-left: 2em">Open the command line (the default key binding for this is <tt>ctrl-y</tt>), type "quit", and hit <tt>ENTER</tt>.</p>
                 <h3>How do I get syntax highlighting?</h3>
                 <p style="margin-left: 2em">A plugin such as <tt>lang/c</tt> and <tt>lang/syntax/c</tt>.</p>
                 <h3>Can I change <tt>yed</tt>'s colors?</h3>
-                <p style="margin-left: 2em">Yes. Use the command <tt>style</tt> to activate a style made available by plugins.</p>
+                <p style="margin-left: 2em">Yes. Use the command <tt>style</tt> to activate a style made available by plugins. See <a href="#S7">Styles</a>.</p>
                 <h3>How do I get line numbers?</h3>
                 <p style="margin-left: 2em">A plugin such as <tt>line_numbers</tt>.</p>
                 <h3>How do move my configuration to a new machine?</h3>
