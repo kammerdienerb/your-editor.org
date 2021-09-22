@@ -27,9 +27,10 @@
                     <ul class="toc_list">
                         <li><a href="#S1">1 Starting yed for the first time</a>
                             <ul>
-                                <li><a href="#S1_1">~/.yed</a></li>
+                                <li><a href="#S1_1">Configuration</a></li>
                                 <li><a href="#S1_2">init.so</a></li>
                                 <li><a href="#S1_3">yedrc</a></li>
+                                <li><a href="#S1_4">Different Config Paths</a></li>
                             </ul>
                         </li>
                         <li><a href="#S2">2 Running commands</a></li>
@@ -67,18 +68,18 @@
                 <pre class="inline_code">
                     <span class="sl"><span class="prompt">$ </span>yed <span class="cmt"># run your editor</span></span>
                 </pre>
-                <h3 id="S1_1">~/.yed</h3>
-                    All configuration of <tt>yed</tt> starts with items located in <tt>~/.yed</tt>.
+                <h3 id="S1_1">Configuration</h3>
+                    All configuration of <tt>yed</tt> by default starts with items located in <tt>~/.config/yed</tt>.
                     If this is your first time running <tt>yed</tt>, you should see a popup that looks like this:
                     <center><img style="margin: 10px" src="images/dot_yed_popup.png"/></center>
                     Hitting '<tt>y</tt>' will create this directory and fill it with a default configuration made up of a few items that are explained in the next sections.
                     You may see an additional popup asking you to update YPM (see <a href="#S6_1">this</a> section).
                 <h3 id="S1_2">init.so</h3>
-                    The root of any <tt>yed</tt> configuration is the file <tt>~/.yed/init.so</tt>. This file is simply another <tt>yed</tt> plugin that sets options, adds commands, etc.
+                    The root of any <tt>yed</tt> configuration is the file <tt>~/.config/yed/init.so</tt>. This file is simply another <tt>yed</tt> plugin that sets options, adds commands, etc.
                     It is different from other plugins only in that it is loaded automatically by <tt>yed</tt> at startup.
                     <br/>
                     <br/>
-                    If you allowed <tt>yed</tt> to create your <tt>~/.yed</tt> for you, you should see this file along with <tt>init.c</tt>, the source code for <tt>init.so</tt>.
+                    If you allowed <tt>yed</tt> to create your <tt>~/.config/yed</tt> for you, you should see this file along with <tt>init.c</tt>, the source code for <tt>init.so</tt>.
                     <br/>
                     <br/>
                     Examining <tt>init.c</tt>, you should notice a few things:
@@ -86,7 +87,7 @@
                         <li>It uses <tt>YEXE()</tt> to run <tt>yed</tt> commands.</li>
                         <li>It creates a command called <tt>recompile-init</tt>, which you can use to integrate changes you make to this file.</li>
                         <li>It loads a couple of plugins (<tt>ypm</tt> and <tt>yedrc</tt>).</li>
-                        <li>It instructs <tt>yedrc</tt> to load the file <tt>~/.yed/yedrc</tt>.</li>
+                        <li>It instructs <tt>yedrc</tt> to load the file <tt>~/config/.yed/yedrc</tt>.</li>
                     </ul>
                 <h3 id="S1_3">yedrc</h3>
                     <tt>yedrc</tt> is a plugin that allows you to source files that contain a sequence of <tt>yed</tt> commands and execute them.
@@ -95,6 +96,10 @@
                     <br/>
                     However, configuration that requires any dynamic behavior such as setting variables to different values depending on the presence of a program on the system, or custom frame rules, are not possible just by calling commands.
                     You always have the option to program complex configuration in your <tt>init.c</tt> (or any plugin, for that matter).
+                <h3 id="S1_4">Different Config Paths</h3>
+                    When the environment variable <tt>YED_CONFIG_DIR</tt> is set, <tt>yed</tt> will use that directory instead of <tt>~/.config/yed</tt>.
+                    Otherwise, if <tt>XDG_CONFIG_HOME</tt> is set, <tt>yed</tt> will search there.
+                    <tt>~/.config/yed</tt> is used in any other case.
             <h2 id="S2">Running commands</h2>
                 Most behavior in <tt>yed</tt> is command driven.
                 This is true even at a basic level.
@@ -248,7 +253,7 @@
                 <h3>How do I get line numbers?</h3>
                 <p style="margin-left: 2em">A plugin such as <tt>line_numbers</tt>.</p>
                 <h3>How do move my configuration to a new machine?</h3>
-                <p style="margin-left: 2em">Copy your <tt>yedrc</tt> files and your <tt>ypm_list</tt> as appropriate to your new <tt>~/.yed</tt> and recompile your <tt>init.so</tt> and any other plugins you may have written.
+                <p style="margin-left: 2em">Copy your <tt>yedrc</tt> files and your <tt>ypm_list</tt> as appropriate to your new <tt>~/config/.yed</tt> and recompile your <tt>init.so</tt> and any other plugins you may have written.
                 If you are using <tt>ypm</tt>, running <tt>ypm-update</tt> will install all of the plugins from your <tt>ypm_list</tt>.</p>
         </div></div></div></div>
 
