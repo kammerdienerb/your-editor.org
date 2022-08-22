@@ -21,6 +21,10 @@
 
         <div class="content"><div class="inner"><div class="scrollable"><div class="main">
             <br/>
+            <br/>
+            <span style="color: #53aa6f">NOTE</span>: The command <tt>show-vars</tt> pulls up the special buffer *vars, which displays the current value of every set variable.
+            <br/>
+            <br/>
             <center><table>
                 <tr>
                     <td>tab-width</td>
@@ -36,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>buffer-load-mode</td>
-                    <td>Method used to load buffers from the file system. Options are "map" and "stream". "stream" may be faster for smaller buffers. Default "map".</td>
+                    <td>Method used to load buffers from the file system. Options are "map" and "stream". "map" may be faster for very large buffers. Default "stream". Some "files" can't be loaded with buffer-load-mode "map" such as things in /proc.</td>
                 </tr>
                 <tr>
                     <td>bracketed-paste-mode</td>
@@ -69,6 +73,26 @@
                 <tr>
                     <td>use-boyer-moore</td>
                     <td>If true, uses the Boyer Moore substring search algorithm, which can be faster for long strings with certain properties. Default "no".</td>
+                </tr>
+                <tr>
+                    <td>status-line-left</td>
+                    <td>Format string describing the left section of the status line. Default " %f %b" (frame number, buffer name).</td>
+                </tr>
+                <tr>
+                    <td>status-line-center</td>
+                    <td>Format string describing the center section of the status line. Default "" (nothing).</td>
+                </tr>
+                <tr>
+                    <td>status-line-right</td>
+                    <td>Format string describing the right section of the status line. Default "(%p%%)  %l :: %c  %t " (vertical position in buffer as a percentage, line number, column number, current time).</td>
+                </tr>
+                <tr>
+                    <td>screen-update-sync</td>
+                    <td>Whether or not to wrap screen updates in a pair of escape sequences (\e[?2026h, and \e[?2026l) that indicate one screen update to the terminal. Default "yes".</td>
+                </tr>
+                <tr>
+                    <td>syntax-max-line-length</td>
+                    <td>For plugins using syntax.h, this variable limits the maximum length of a line that will be highlighted. Default 1000.</td>
                 </tr>
             </table></center>
             <br/>

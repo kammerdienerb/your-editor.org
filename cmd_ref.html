@@ -139,6 +139,10 @@
                     <td>Open buffer called name in the active frame. If there is no frame, create one. If the buffer does not already exist, try to load it from the file system.</td>
                 </tr>
                 <tr>
+                    <td>buffer-hidden &lt;name&gt;</td>
+                    <td>Same as buffer, but does not open a frame.</td>
+                </tr>
+                <tr>
                     <td>buffer-delete [name]</td>
                     <td>If name is provided, delete buffer name. Otherwise delete the buffer of the active frame.</td>
                 </tr>
@@ -191,12 +195,48 @@
                     <td>Activate the previous frame.</td>
                 </tr>
                 <tr>
+                    <td>frame-tree-next</td>
+                    <td>Activate the next frame tree (split group).</td>
+                </tr>
+                <tr>
+                    <td>frame-tree-prev</td>
+                    <td>Activate the previous frame tree (split group).</td>
+                </tr>
+                <tr>
                     <td>frame-move</td>
                     <td>Move the active frame around interactively.</td>
                 </tr>
                 <tr>
+                    <td>frame-set-position &lt;top&gt; &lt;left&gt;</td>
+                    <td>Set the frame's top left corner. top and left should be in [0,1].</td>
+                </tr>
+                <tr>
                     <td>frame-resize</td>
-                    <td>Resize the active frame around interactively.</td>
+                    <td>Resize the active frame interactively.</td>
+                </tr>
+                <tr>
+                    <td>frame-tree-resize</td>
+                    <td>Resize the active frame tree (split group) interactively.</td>
+                </tr>
+                <tr>
+                    <td>frame-set-size &lt;height&gt; &lt;width&gt;</td>
+                    <td>Set the current frame's size. height and width should be in [0,1].</td>
+                </tr>
+                <tr>
+                    <td>frame-tree-set-size &lt;height&gt; &lt;width&gt;</td>
+                    <td>Set the current frame tree's size. height and width should be in [0,1].</td>
+                </tr>
+                <tr>
+                    <td>frame &lt;name/number&gt;</td>
+                    <td>Activate the frame with the given name or number.</td>
+                </tr>
+                <tr>
+                    <td>frame-name [name]</td>
+                    <td>Get or set the currently active frame's name.</td>
+                </tr>
+                <tr>
+                    <td>frame-unname</td>
+                    <td>Clear the currently active frame's name.</td>
                 </tr>
                 <tr>
                     <td>insert &lt;keycode&gt;</td>
@@ -319,10 +359,6 @@
                     <td>Run each command in cmds sequentially.</td>
                 </tr>
                 <tr>
-                    <td>if &lt;var&gt; &lt;true-cmd&gt; [false-cmd]</td>
-                    <td>If variable is truthy, run command true-cmd, else if false-cmd is provided, run it.</td>
-                </tr>
-                <tr>
                     <td>suspend</td>
                     <td>Suspend the editor to the parent shell's background job control.</td>
                 </tr>
@@ -361,6 +397,22 @@
                 <tr>
                     <td>cursor-style &lt;style&gt;</td>
                     <td>Sets the cursor style. Options are default, blinking-block, steady-block, blinking-underline, steady-underline, blinking-bar, and steady-bar.</td>
+                </tr>
+                <tr>
+                    <td>feed-keys &lt;keys...&gt;</td>
+                    <td>Send keys to yed.</td>
+                </tr>
+                <tr>
+                    <td>alias &lt;name&gt; &lt;cmd&gt;</td>
+                    <td>Create an alias for a command.</td>
+                </tr>
+                <tr>
+                    <td>repeat &lt;num&gt; &lt;cmd&gt; [args...]</td>
+                    <td>Repeat a command num times.</td>
+                </tr>
+                <tr>
+                    <td>nop</td>
+                    <td>Doesn't do anything.</td>
                 </tr>
             </table></center>
             <br/>
